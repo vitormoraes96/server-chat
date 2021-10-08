@@ -2,6 +2,7 @@ const express = require('express');
 const http = require('http');
 const { Server } = require('socket.io');
 
+const port = process.env.PORT || 3000;
 
 const app = express();
 const server = http.createServer(app);
@@ -29,6 +30,6 @@ io.on('connection', (socket) => {
     });
 });
 
-server.listen(3000, () => {
+server.listen(port, () => {
     console.log('O chat server está rodando na porta 3000')
 })
